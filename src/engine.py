@@ -28,8 +28,11 @@ class Engine:
             for rec in self.rectlist:
                 pygame.draw.rect(self.screen, (255, 255, 255), (rec.get_body().position[0] - (rec.size//2), 
                 rec.get_body().position[1]-(rec.size//2), rec.size, rec.size), 0)
+                pygame.draw.rect(self.screen, (50, 50, 50), (rec.get_body().position[0] - (rec.size//2), 
+                rec.get_body().position[1]-(rec.size//2), rec.size, rec.size), 1)
             for circ in self.circlelist:
-                pygame.draw.circle(self.screen, (255, 255, 255), (circ.get_body().position[0],circ.get_body().position[1] ), circ.get_radius())
+                pygame.draw.circle(self.screen, (255, 255, 255), (circ.get_body().position[0],circ.get_body().position[1] ), circ.get_radius(),0)
+                pygame.draw.circle(self.screen, (50, 50, 50), (circ.get_body().position[0],circ.get_body().position[1] ), circ.get_radius(),1)
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEBUTTONUP:
                     pos = pygame.mouse.get_pos()
